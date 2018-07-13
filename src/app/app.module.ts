@@ -12,16 +12,25 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { UpdateComponent } from './update/update.component';
 import { HeadersComponent } from './headers/headers.component';
+import { StepOneComponent } from './step-one/step-one.component';
+import { StepTwoComponent } from './step-two/step-two.component';
+import { StepThreeComponent } from './step-three/step-three.component';
+import { StepFourComponent } from './step-four/step-four.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     UpdateComponent,
-    HeadersComponent
+    HeadersComponent,
+    StepOneComponent,
+    StepTwoComponent,
+    StepThreeComponent,
+    StepFourComponent
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule, MatIconModule, MatButtonModule, MatFormFieldModule, MatToolbarModule, MatListModule, MatCardModule,
-    MatStepperModule, MatMenuModule, FormsModule, ReactiveFormsModule, MatOptionModule, MatSelectModule, MatInputModule, MatSidenavModule  ],
+    MatStepperModule, MatMenuModule, FormsModule, ReactiveFormsModule, MatOptionModule, MatSelectModule, MatInputModule, MatSidenavModule, AppRoutingModule  ],
   providers: [],
   bootstrap: [AppComponent]
 })
