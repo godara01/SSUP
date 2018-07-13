@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
-import { MatStepperModule, MatIconModule, MatButtonModule, MatFormFieldModule, MatOptionModule, MatSelectModule, MatInputModule, MatSidenavModule, MatMenuModule } from '@angular/material';
+import { MatStepperModule, MatIconModule, MatButtonModule, MatFormFieldModule, MatOptionModule, MatSelectModule, MatInputModule, MatSidenavModule, MatMenuModule, MatCheckboxModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -30,7 +30,7 @@ import { AppRoutingModule } from './/app-routing.module';
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule, MatIconModule, MatButtonModule, MatFormFieldModule, MatToolbarModule, MatListModule, MatCardModule,
-    MatStepperModule, MatMenuModule, FormsModule, ReactiveFormsModule, MatOptionModule, MatSelectModule, MatInputModule, MatSidenavModule, AppRoutingModule  ],
+    MatStepperModule, MatMenuModule, MatCheckboxModule, FormsModule, ReactiveFormsModule, MatOptionModule, MatSelectModule, MatInputModule, MatSidenavModule, AppRoutingModule  ],
   providers: [],
   bootstrap: [AppComponent]
 })

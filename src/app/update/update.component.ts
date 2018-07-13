@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {MatStepperModule} from '@angular/material/stepper';
 import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-update',
@@ -14,12 +14,10 @@ export class UpdateComponent implements OnInit {
   isMobile = false;
 
   activateHandsetLayout() {
-    
     this.isMobile = true;
     console.log(this.isMobile);
   };
   activateWebLayout() {
-    
     this.isMobile = false;
     console.log(this.isMobile);
   };
@@ -40,8 +38,6 @@ export class UpdateComponent implements OnInit {
       }
     });
   }
-
-  
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
 
