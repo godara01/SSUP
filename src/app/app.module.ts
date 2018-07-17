@@ -29,7 +29,7 @@ import { AppRoutingModule } from './/app-routing.module';
     StepFourComponent
   ],
   imports: [
-    BrowserModule, BrowserAnimationsModule, MatIconModule, MatButtonModule, MatFormFieldModule, MatToolbarModule, MatListModule, MatCardModule,
+    BrowserModule, MatSelectModule, BrowserAnimationsModule, MatIconModule, MatButtonModule, MatFormFieldModule, MatToolbarModule, MatListModule, MatCardModule,
     MatStepperModule, MatMenuModule, MatCheckboxModule, FormsModule, ReactiveFormsModule, MatOptionModule, MatSelectModule, MatInputModule, MatSidenavModule, AppRoutingModule  ],
   providers: [],
   bootstrap: [AppComponent]
