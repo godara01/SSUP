@@ -1,0 +1,16 @@
+p>* {
+  line-height: 5ch;
+}
+
+h1 {
+  margin: 10px;
+}
+
+p {
+  margin: 10px;
+  font-size: 16px;
+}
+
+.center {
+  text-align: center;
+}

@@ -1,96 +1,143 @@
-<div *ngIf="!isMobile" > 
-<mat-horizontal-stepper #stepper>
+<div *ngIf="!isMobile">
+  <mat-horizontal-stepper #stepper>
     <mat-step [stepControl]="firstFormGroup">
-        <form [formGroup]="firstFormGroup">
-          <ng-template matStepLabel>Login with Aadhaar/VID</ng-template>
-          <!-- <app-step-one></app-step-one> -->
-          <h2>Dear Resident</h2><br/>
-          <p>To start the process, please enter your Aadhaar number or VID below.</p>
-          <div>
-            <mat-form-field >
-              <input matInput type="number" name="Adhaar/VID" placeholder="Aadhaar/VID" formControlName="firstCtrl" required><br>
-              </mat-form-field>
-              <br>
-              <mat-form-field>
-              <input matInput type="number" name="verify text" placeholder="verification text" formControlName="firstCtrl" required><br>
-            </mat-form-field>
-          </div>
-          <button mat-stroked-button matStepperNext color="primary">Send OTP</button> or <button mat-stroked-button color="accent">Enter TOTP</button>
-        </form>
-      </mat-step>
-      <mat-step [stepControl]="secondFormGroup">
-        <form [formGroup]="secondFormGroup">
-          <ng-template matStepLabel>Request Data Update</ng-template>
-          <!-- <app-step-two></app-step-two> -->
-          <h2>Select the fields to be updated</h2>
-          <p>Local Language: Hindi</p>
-          <div class="col">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Login with Aadhaar/VID</ng-template>
+        <!-- <app-step-one></app-step-one> -->
+        <h2>Dear Resident</h2>
+        <br/>
+        <p>To start the process, please enter your Aadhaar number or VID below.</p>
+        <div>
+          <mat-form-field>
+            <input matInput type="number" name="Adhaar/VID" placeholder="Aadhaar/VID" formControlName="firstCtrl" required>
+            <br>
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <input matInput type="number" name="verify text" placeholder="verification text" formControlName="firstCtrl" required>
+            <br>
+          </mat-form-field>
+        </div>
+        <button mat-stroked-button matStepperNext color="primary">Send OTP</button> or
+        <button mat-stroked-button color="accent">Enter TOTP</button>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Request Data Update</ng-template>
+        <!-- <app-step-two></app-step-two> -->
+        <h2>Select the fields to be updated</h2>
+        <p>Local Language: Hindi</p>
+        <div class="col">
           <mat-checkbox required>Address</mat-checkbox>
           <mat-checkbox>Address via PIN code</mat-checkbox>
-          </div>
-          <button mat-stroked-button matStepperNext color="accent">Submit</button>
-        </form>
-      </mat-step>
-      <mat-step>
-        <ng-template matStepLabel>Documents Upload</ng-template>
-        <!-- <app-step-three></app-step-three> -->
-        <h1>Update Request Confirmation and Document Upload</h1>
-        <p>Your request requires upload of a valid and self attested document proof. Maximum size: 2 MB. 
-          File type supported: .jpg, .pdf, .tiff, .png.</p>
-          <p>Please Upload and submit</p>
-          <div class="uploadDoc">
-              <mat-form-field>
-                  <mat-select placeholder="Document Type">
-                    <mat-option *ngFor="let document of documents" [value]="document.value">
-                      {{document.viewValue}}
-                    </mat-option>
-                  </mat-select>
-                </mat-form-field>
-            <input type="file" />
-            <button>submit</button>
-          </div>
-      </mat-step>
-      <mat-step>
-        <ng-template matStepLabel>BPO Servide Provider Selection</ng-template>
-        <app-step-four></app-step-four>
-      </mat-step>
-</mat-horizontal-stepper>
+        </div>
+        <button mat-stroked-button matStepperNext color="accent">Submit</button>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Documents Upload</ng-template>
+      <!-- <app-step-three></app-step-three> -->
+      <h1>Update Request Confirmation and Document Upload</h1>
+      <p>Your request requires upload of a valid and self attested document proof. Maximum size: 2 MB. File type supported:
+        .jpg, .pdf, .tiff, .png.</p>
+      <p>Please Upload and submit</p>
+      <div class="uploadform">
+        <mat-form-field>
+          <mat-select placeholder="Document Type">
+            <mat-option *ngFor="let document of documents" [value]="document.value">
+              {{document.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div>
+          <button mat-raised-button color="primary">
+            <div class="uploadDoc">
+              <span>Choose file</span>
+              <input type="file" class="upload">
+            </div>
+          </button>
+        </div>
+        <div>
+          <button mat-stroked-button>Submit</button>
+        </div>
+      </div>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>BPO Servide Provider Selection</ng-template>
+      <app-step-four></app-step-four>
+    </mat-step>
+  </mat-horizontal-stepper>
 </div>
 
 <div *ngIf="isMobile">
-<mat-vertical-stepper >
-    <mat-step [stepControl]="firstFormGroup">
-        <form [formGroup]="firstFormGroup">
-          <ng-template matStepLabel>Login with Aadhaar/VID</ng-template>
-          <!-- <app-step-one></app-step-one> -->
-          <h2>Dear Resident</h2><br/>
-<p>To start the process, please enter your Aadhaar number or VID below.</p>
-<div>
-  <mat-form-field >
-    <input matInput type="number" name="Adhaar/VID" placeholder="Aadhaar/VID" formControlName="firstCtrl" required><br>
-    </mat-form-field>
-    <br>
-    <mat-form-field>
-    <input matInput type="number" name="verify text" placeholder="verification text" formControlName="firstCtrl" required><br>
-  </mat-form-field>
+  <mat-vertical-stepper>
+      <mat-step [stepControl]="firstFormGroup">
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Login with Aadhaar/VID</ng-template>
+            <!-- <app-step-one></app-step-one> -->
+            <h2>Dear Resident</h2>
+            <br/>
+            <p>To start the process, please enter your Aadhaar number or VID below.</p>
+            <div>
+              <mat-form-field>
+                <input matInput type="number" name="Adhaar/VID" placeholder="Aadhaar/VID" formControlName="firstCtrl" required>
+                <br>
+              </mat-form-field>
+              <br>
+              <mat-form-field>
+                <input matInput type="number" name="verify text" placeholder="verification text" formControlName="firstCtrl" required>
+                <br>
+              </mat-form-field>
+            </div>
+            <button mat-stroked-button matStepperNext color="primary">Send OTP</button> or
+            <button mat-stroked-button color="accent">Enter TOTP</button>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup">
+          <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Request Data Update</ng-template>
+            <!-- <app-step-two></app-step-two> -->
+            <h2>Select the fields to be updated</h2>
+            <p>Local Language: Hindi</p>
+            <div class="col">
+              <mat-checkbox required>Address</mat-checkbox>
+              <mat-checkbox>Address via PIN code</mat-checkbox>
+            </div>
+            <button mat-stroked-button matStepperNext color="accent">Submit</button>
+          </form>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Documents Upload</ng-template>
+          <!-- <app-step-three></app-step-three> -->
+          <h1>Update Request Confirmation and Document Upload</h1>
+          <p>Your request requires upload of a valid and self attested document proof. Maximum size: 2 MB. File type supported:
+            .jpg, .pdf, .tiff, .png.</p>
+          <p>Please Upload and submit</p>
+          <div class="uploadform">
+            <mat-form-field>
+              <mat-select placeholder="Document Type">
+                <mat-option *ngFor="let document of documents" [value]="document.value">
+                  {{document.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <div>
+              <button mat-raised-button color="primary">
+                <div class="uploadDoc">
+                  <span>Choose file</span>
+                  <input type="file" class="upload">
+                </div>
+              </button>
+            </div>
+            <div>
+              <button mat-stroked-button>Submit</button>
+            </div>
+          </div>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>BPO Servide Provider Selection</ng-template>
+          <app-step-four></app-step-four>
+        </mat-step>
+  </mat-vertical-stepper>
 </div>
-<button mat-stroked-button matStepperNext color="primary">Send OTP</button> or <button mat-stroked-button color="accent">Enter TOTP</button>
-        </form>
-      </mat-step>
-      <mat-step [stepControl]="secondFormGroup">
-        <form [formGroup]="secondFormGroup">
-          <ng-template matStepLabel>Request Data Update</ng-template>
-          <app-step-two></app-step-two>
-        </form>
-      </mat-step>
-      <mat-step>
-        <ng-template matStepLabel>Documents Upload</ng-template>
-        <app-step-three></app-step-three>
-      </mat-step>
-      <mat-step>
-        <ng-template matStepLabel>BPO Servide Provider Selection</ng-template>
-        <app-step-four></app-step-four>
-      </mat-step>
-</mat-vertical-stepper>
-</div>
-

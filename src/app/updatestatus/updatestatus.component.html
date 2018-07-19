@@ -1,0 +1,22 @@
+<h2>Update Status</h2>
+<br/>
+<p>Please enter your Aadhaar and URN / SRN to check status</p>
+<div>
+  <mat-form-field>
+    <input matInput type="number" name="Adhaar/VID" placeholder="Aadhaar/VID Number" required>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input matInput type="number" name="verify text" placeholder="URN" formControlName="firstCtrl" required>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input matInput type="number" name="verify text" placeholder="SRN" formControlName="firstCtrl" required>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input matInput type="number" name="verify text" placeholder="Verificatoin Text" formControlName="firstCtrl" required>
+    <br>
+  </mat-form-field>
+</div>
+<button mat-raised-button color="primary">Get Status</button>

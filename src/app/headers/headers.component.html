@@ -16,11 +16,11 @@
     <mat-toolbar color="primary">
         <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="isMobile"><mat-icon>menu</mat-icon></button>
         <mat-menu #menu="matMenu">
-            <button mat-menu-item>SSUP Home</button>
-            <button mat-menu-item>Instructions</button>
-            <button mat-menu-item>Update Status</button>
-            <button mat-menu-item>FAQ</button>
-            <button mat-menu-item>Contact Us</button>
+          <a routerLink="/home"><button mat-menu-item>SSUP Home</button></a>
+          <a routerLink="/instructions"><button mat-menu-item>Instructions</button></a>
+          <a routerLink="/updatestatus"><button mat-menu-item>Update Status</button></a>
+          <a routerLink="/faq"><button mat-menu-item>FAQ</button></a>
+          <a routerLink="/contactus"><button mat-menu-item>Contact Us</button></a>
         </mat-menu>
       <span>Aadhaar Self Service Update Portal</span>
       <span class="fill-remaining-space"></span>
@@ -28,13 +28,11 @@
 
       
       <div class="equally-spaced" *ngIf="!isMobile">
-        <button mat-button>SSUP Home</button>
-        <button mat-button>Instructions</button>
-        <button mat-button>Update Status</button>
-        <button mat-button>FAQ</button>
-        <button mat-button>Contact Us</button>
-
-
+        <a routerLink="/home"><button mat-button>SSUP Home</button></a>
+        <a routerLink="/instructions"><button mat-button>Instructions</button></a>
+        <a routerLink="/updatestatus"><button mat-button>Update Status</button></a>
+        <a routerLink="/faq"><button mat-button>FAQ</button></a>
+        <a routerLink="/contactus"><button mat-button>Contact Us</button></a>
       </div>
 
     </mat-toolbar>
